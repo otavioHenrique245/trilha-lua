@@ -1,4 +1,3 @@
-
 -- habilitar UTF-8
 os.execute "chcp 65001"
 
@@ -18,23 +17,21 @@ local speedAttribute = 4
 local inteligenceAttribute = 7
 
 local function getProgressBar(attribute)
-local fullChar = "⬛"
-local emptyChar = "⬜"
-
+    local fullChar = "⬛"
+    local emptyChar = "⬜"
     local result = ""
-    for i = 1, 10, 1 do
-       if i <= attribute then
-        -- quadradindo cheio
-        result = result .. fullChar
-       else
-        -- quadradinho vazio
-        result = result .. emptyChar
+    for i = 1, 10 do
+        if i <= attribute then
+            result = result .. fullChar
+        else
+            result = result .. emptyChar
+        end
     end
-end
-    return result 
+    return result
 end
 
-print("======================================================")
+-- informações detalhadas do monstro
+print("======================================================================")
 print("| " .. monsterName)
 print("| " .. description)
 print("|")
@@ -46,10 +43,12 @@ print("|")
 print("| -----------------------------------------")
 print("|")
 print("|  Atributos: ")
+print("|")
 print("|  Ataque:          " .. getProgressBar(attackAttribute))
 print("|  Defesa:          " .. getProgressBar(defenseAttribute))
 print("|  Vida:            " .. getProgressBar(lifeAttribute))
 print("|  Velocidade:      " .. getProgressBar(speedAttribute))
 print("|  Inteligencia:    " .. getProgressBar(inteligenceAttribute))
-print("| ")
-print("======================================================")
+print("|")
+print("===================================================================")
+print("")
